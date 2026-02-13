@@ -1,3 +1,4 @@
+![Banner](assets/repo-banner.svg)
 # Arma Reforger Dedicated Server (LinuxGSM)
 
 Репозиторій з інструкціями та шаблонами для адміністрування **Arma Reforger Dedicated Server** через **LinuxGSM** (`armarserver`).
