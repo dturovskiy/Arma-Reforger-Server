@@ -44,12 +44,12 @@
     </g>
   </g>
 
-  <text x="580" y="200"
+  <text x="650" y="200"
         font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial"
         font-size="44" font-weight="700" fill="#e6edf3">
     Arma Reforger Server
   </text>
-  <text x="580" y="248"
+  <text x="650" y="248"
         font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial"
         font-size="26" font-weight="600" fill="#c0caf5" opacity="0.95">
     LinuxGSM • конфіги • сценарії • моди
