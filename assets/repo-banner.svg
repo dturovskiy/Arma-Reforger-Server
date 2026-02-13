@@ -13,27 +13,21 @@
     </filter>
   </defs>
 
-  <!-- Background -->
   <rect width="1280" height="640" fill="url(#bg)"/>
 
-  <!-- Decorative grid -->
   <g opacity="0.08">
     <path d="M0 80H1280M0 160H1280M0 240H1280M0 320H1280M0 400H1280M0 480H1280M0 560H1280" stroke="#ffffff" stroke-width="1"/>
     <path d="M80 0V640M160 0V640M240 0V640M320 0V640M400 0V640M480 0V640M560 0V640M640 0V640M720 0V640M800 0V640M880 0V640M960 0V640M1040 0V640M1120 0V640M1200 0V640" stroke="#ffffff" stroke-width="1"/>
   </g>
 
-  <!-- Title block -->
   <g filter="url(#softShadow)">
     <rect x="80" y="110" rx="18" ry="18" width="1120" height="240" fill="#0b1220" opacity="0.92" stroke="#1f2a3a"/>
-    <rect x="80" y="350" rx="18" ry="18" width="1120" height="120" fill="#0b1220" opacity="0.78" stroke="#1f2a3a"/>
+    <rect x="80" y="360" rx="18" ry="18" width="1120" height="140" fill="#0b1220" opacity="0.78" stroke="#1f2a3a"/>
   </g>
 
-  <!-- Accent line -->
   <rect x="80" y="110" width="1120" height="8" fill="url(#accent)" opacity="0.95"/>
 
-  <!-- Icon: server rack + terminal + relay -->
   <g transform="translate(108,156)">
-    <!-- server rack -->
     <rect x="0" y="0" rx="14" ry="14" width="220" height="148" fill="#0f1a2a" stroke="#2a3a52" stroke-width="2"/>
     <rect x="16" y="18" rx="8" ry="8" width="188" height="28" fill="#0b1220" stroke="#2a3a52"/>
     <circle cx="32" cy="32" r="5" fill="#7aa2f7"/>
@@ -43,14 +37,12 @@
     <rect x="16" y="60" rx="8" ry="8" width="188" height="28" fill="#0b1220" stroke="#2a3a52"/>
     <rect x="16" y="102" rx="8" ry="8" width="188" height="28" fill="#0b1220" stroke="#2a3a52"/>
 
-    <!-- terminal badge -->
     <g transform="translate(250,8)">
       <rect x="0" y="0" rx="14" ry="14" width="260" height="64" fill="#0f1a2a" stroke="#2a3a52" stroke-width="2"/>
       <text x="18" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
             font-size="22" fill="#c0caf5">&gt; armarserver start</text>
     </g>
 
-    <!-- relay waves -->
     <g transform="translate(250,92)">
       <rect x="0" y="0" rx="14" ry="14" width="260" height="56" fill="#0f1a2a" stroke="#2a3a52" stroke-width="2"/>
       <g transform="translate(36,28)" fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.95">
@@ -63,33 +55,30 @@
         <path d="M16 0a40 40 0 0 0 40 40" />
       </g>
       <text x="120" y="35" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial"
-            font-size="18" fill="#c0caf5" opacity="0.9">mods • scenarioId • ports</text>
+            font-size="18" fill="#c0caf5" opacity="0.9">mods • scenarioId</text>
     </g>
   </g>
 
-  <!-- Main title -->
-  <text x="420" y="200"
+  <text x="660" y="200"
         font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial"
         font-size="44" font-weight="700" fill="#e6edf3">
-    Arma Reforger Dedicated Server
+    Arma Reforger Server
   </text>
-  <text x="420" y="248"
+  <text x="660" y="248"
         font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial"
-        font-size="28" font-weight="600" fill="#c0caf5" opacity="0.95">
-    LinuxGSM (armarserver) • конфіги • сценарії • моди
+        font-size="26" font-weight="600" fill="#c0caf5" opacity="0.95">
+    LinuxGSM • конфіги • сценарії • моди
   </text>
 
-  <!-- Subtitle / quick bullets -->
   <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" fill="#c0caf5" opacity="0.9">
-    <text x="120" y="410" font-size="22">• SOP/PLAN: розгортання → порти → server.json → сценарії → моди → регламенти</text>
-    <text x="120" y="446" font-size="22">• Modding: Workbench, залежності, публікація, оновлення</text>
-    <text x="120" y="482" font-size="22">• PvP 128 сценарій: Conflict-логістика + POI-бази + ретранслятори + цивільні</text>
+    <text x="120" y="405" font-size="22">• SOP/PLAN: розгортання → порти → server.json → сценарії</text>
+    <text x="120" y="440" font-size="22">• Modding: Workbench, залежності, публікація, оновлення</text>
+    <text x="120" y="475" font-size="22">• PvP 128: Conflict-логістика + POI-бази + ретранслятори</text>
   </g>
 
-  <!-- Footer label -->
   <g opacity="0.85">
-    <rect x="80" y="520" rx="14" ry="14" width="1120" height="70" fill="#0b1220" stroke="#1f2a3a"/>
-    <text x="110" y="565"
+    <rect x="80" y="530" rx="14" ry="14" width="1120" height="70" fill="#0b1220" stroke="#1f2a3a"/>
+    <text x="110" y="575"
           font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
           font-size="20" fill="#e6edf3">repo: armarserver • linuxgsm • config.json • workshop mods</text>
   </g>
