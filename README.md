@@ -4,7 +4,7 @@
 
 ## 📌 Основна інструкція
 
-➡️ **[Повний гайд](/instruction.md)**
+➡️ **[Повний гайд](/docs/instruction.md)**
 
 ---
 
@@ -40,7 +40,7 @@ curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgs
 .
 ├─ README.md
 └─ docs/
-   └─ arma-reforger-linuxgsm-discord.md   # (вставте сюди інструкцію з Canvas)
+   └─ instruction.md
 ```
 
 ---
