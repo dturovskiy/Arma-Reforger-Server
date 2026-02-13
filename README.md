@@ -2,9 +2,11 @@
 
 Репозиторій з інструкціями та шаблонами для адміністрування **Arma Reforger Dedicated Server** через **LinuxGSM** (`armarserver`).
 
+---
+
 ## 📌 Основна інструкція
 
-➡️ **[Повний гайд](/docs/instruction.md)**
+➡️ **[Повний гайд розгортання сервера](/docs/instruction.md)**
 
 ## 🗺️ План запуску та SOP
 
@@ -13,6 +15,36 @@
 ## 🧩 Моддинг (Workbench)
 
 ➡️ **[Як робити моди + офіційні посилання Bohemia](/docs/MODDING.md)**
+
+## 🎮 План розробки сценарію (PvP 128, Conflict-логістика + POI-бази + ретранслятори + цивільні)
+
+➡️ **[План розробки сценарію](/docs/SCENARIO_PLAN.md)** — від ідеї до релізу на сервері
+
+### Коротко: концепт режиму
+- **PvP 128**
+- Кожна команда стартує з **HQ (Main Base)**, яку **не можна штурмувати/захоплювати**
+- До **6 побудованих Outpost-баз** на команду
+- Outpost-бази **будуються у POI** (кандидатів на один “слот прогресу” кілька, щоб ворог не знав наперед)
+- **Фазність штурму:**
+  1) ворог **знищує ретранслятор** на базі
+  2) база стає **захоплюваною біля намету**
+  3) після захоплення — **будівництво ретранслятора** новим власником
+- **Прогрес/відкат фронту:**
+  - побудова ретранслятора відкриває наступні POI для команди
+  - знищення ретранслятора **відкочує прогрес**: наступні POI стають **невидимими/недоступними**
+- **Цивільні NPC (точково, мало):**
+  - інколи статично у POI або короткі переміщення дорогами на цивільному транспорті
+  - ураження цивільного гравцем = **жорсткий штраф (повне пониження рангу)**  
+  - задача: знизити “air-spam”/бомбардування спавнів і баз бездумно
+
+### MVP-етапи (з плану)
+1) **Специфікація правил** (стани POI/баз, прогрес/відкат, win conditions)
+2) **Технічний прототип** (2–3 слоти прогресу, побудова/знищення релейки, ховання/показ POI)
+3) **Інтеграція з кастомною мапою** (POI-лейери, дороги/navmesh під цивільних)
+4) **Conflict-логістика** (сервіси бази, supply, будівництво, транспорт)
+5) **Цивільні (мінімально)** (точкові спавни + штраф)
+6) **Баланс і анти-аб’юз** (No-Assault HQ, лиміти, стабільність 128 PvP)
+7) **Реліз/серверний запуск** (mods + scenarioId + SOP підтримки)
 
 ---
 
@@ -27,7 +59,7 @@ adduser armarserver
 su - armarserver
 curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh armarserver
 ./armarserver install
-```
+````
 
 ### Базові команди
 
@@ -50,30 +82,53 @@ curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgs
 └─ docs/
    ├─ instruction.md
    ├─ PLAN.md
-   └─ MODDING.md
+   ├─ MODDING.md
+   └─ SCENARIO_PLAN_PVP128.md
 ```
 
 ---
 
 ## 🔗 Офіційні джерела
 
-* LinuxGSM: Arma Reforger (`armarserver`): [https://linuxgsm.com/servers/armarserver/](https://linuxgsm.com/servers/armarserver/)
-* SteamCMD (LinuxGSM docs): [https://docs.linuxgsm.com/steamcmd](https://docs.linuxgsm.com/steamcmd)
-* Steam-гайд (server.json + SteamCMD): [https://steamcommunity.com/sharedfiles/filedetails/?id=2809849636](https://steamcommunity.com/sharedfiles/filedetails/?id=2809849636)
+### LinuxGSM / SteamCMD
 
-Додатково (Bohemia Interactive):
+* LinuxGSM: Arma Reforger (`armarserver`)
+* SteamCMD (LinuxGSM docs)
+* Steam-гайд (server.json + SteamCMD)
 
-* Startup Parameters: [https://community.bistudio.com/wiki/Arma_Reforger:Startup_Parameters#Hosting](https://community.bistudio.com/wiki/Arma_Reforger:Startup_Parameters#Hosting)
-* Server Config: [https://community.bistudio.com/wiki/Arma_Reforger:Server_Config](https://community.bistudio.com/wiki/Arma_Reforger:Server_Config)
-* Server Hosting: [https://community.bistudio.com/wiki/Arma_Reforger:Server_Hosting](https://community.bistudio.com/wiki/Arma_Reforger:Server_Hosting)
+```text
+https://linuxgsm.com/servers/armarserver/
+https://docs.linuxgsm.com/steamcmd
+https://steamcommunity.com/sharedfiles/filedetails/?id=2809849636
+```
 
-Моддинг (Bohemia Interactive):
+### Bohemia Interactive (сервер)
 
-* Modding категорія: [https://community.bistudio.com/wiki/Category:Arma_Reforger/Modding](https://community.bistudio.com/wiki/Category:Arma_Reforger/Modding)
-* Scenario Framework: [https://community.bistudio.com/wiki/Arma_Reforger:Scenario_Framework](https://community.bistudio.com/wiki/Arma_Reforger:Scenario_Framework)
-* Mod Publishing Process: [https://community.bistudio.com/wiki/Arma_Reforger:Mod_Publishing_Process](https://community.bistudio.com/wiki/Arma_Reforger:Mod_Publishing_Process)
-* Офіційні приклади (GitHub): [https://github.com/BohemiaInteractive/Arma-Reforger-Samples](https://github.com/BohemiaInteractive/Arma-Reforger-Samples)
-* Workshop портал: [https://reforger.armaplatform.com/workshop](https://reforger.armaplatform.com/workshop)
+* Startup Parameters (Hosting)
+* Server Config
+* Server Hosting
+
+```text
+https://community.bistudio.com/wiki/Arma_Reforger:Startup_Parameters#Hosting
+https://community.bistudio.com/wiki/Arma_Reforger:Server_Config
+https://community.bistudio.com/wiki/Arma_Reforger:Server_Hosting
+```
+
+### Bohemia Interactive (моддинг / сценарії)
+
+* Modding категорія
+* Scenario Framework
+* Mod Publishing Process
+* Офіційні приклади (GitHub)
+* Workshop портал
+
+```text
+https://community.bistudio.com/wiki/Category:Arma_Reforger/Modding
+https://community.bistudio.com/wiki/Arma_Reforger:Scenario_Framework
+https://community.bistudio.com/wiki/Arma_Reforger:Mod_Publishing_Process
+https://github.com/BohemiaInteractive/Arma-Reforger-Samples
+https://reforger.armaplatform.com/workshop
+```
 
 ---
 
@@ -81,6 +136,8 @@ curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgs
 
 PR/Issue вітаються: покращення інструкції, типові кейси (NAT/ports), приклади `server.json`, нотатки по модах, сценаріях та автоматизації.
 
+---
+
 ## 📄 Ліцензія
 
-Додайте LICENSE за потреби (наприклад, MIT).
+[LICENSE MIT](/LICENCE)
