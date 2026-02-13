@@ -6,6 +6,14 @@
 
 ➡️ **[Повний гайд](/docs/instruction.md)**
 
+## 🗺️ План запуску та SOP
+
+➡️ **[План із чеклістами](/docs/PLAN.md)** — хостинг → розгортання → порти → конфіг → сценарії → моди → нюанси → регламенти (SOP)
+
+## 🧩 Моддинг (Workbench)
+
+➡️ **[Як робити моди + офіційні посилання Bohemia](/docs/MODDING.md)**
+
 ---
 
 ## 🧭 Швидкий старт (LinuxGSM)
@@ -40,7 +48,9 @@ curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgs
 .
 ├─ README.md
 └─ docs/
-   └─ instruction.md
+   ├─ instruction.md
+   ├─ PLAN.md
+   └─ MODDING.md
 ```
 
 ---
@@ -57,11 +67,19 @@ curl -Lo linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgs
 * Server Config: [https://community.bistudio.com/wiki/Arma_Reforger:Server_Config](https://community.bistudio.com/wiki/Arma_Reforger:Server_Config)
 * Server Hosting: [https://community.bistudio.com/wiki/Arma_Reforger:Server_Hosting](https://community.bistudio.com/wiki/Arma_Reforger:Server_Hosting)
 
+Моддинг (Bohemia Interactive):
+
+* Modding категорія: [https://community.bistudio.com/wiki/Category:Arma_Reforger/Modding](https://community.bistudio.com/wiki/Category:Arma_Reforger/Modding)
+* Scenario Framework: [https://community.bistudio.com/wiki/Arma_Reforger:Scenario_Framework](https://community.bistudio.com/wiki/Arma_Reforger:Scenario_Framework)
+* Mod Publishing Process: [https://community.bistudio.com/wiki/Arma_Reforger:Mod_Publishing_Process](https://community.bistudio.com/wiki/Arma_Reforger:Mod_Publishing_Process)
+* Офіційні приклади (GitHub): [https://github.com/BohemiaInteractive/Arma-Reforger-Samples](https://github.com/BohemiaInteractive/Arma-Reforger-Samples)
+* Workshop портал: [https://reforger.armaplatform.com/workshop](https://reforger.armaplatform.com/workshop)
+
 ---
 
 ## 🤝 Внесок
 
-PR/Issue вітаються: покращення інструкції, типові кейси (NAT/ports), приклади `server.json`, нотатки по модах та автоматизації.
+PR/Issue вітаються: покращення інструкції, типові кейси (NAT/ports), приклади `server.json`, нотатки по модах, сценаріях та автоматизації.
 
 ## 📄 Ліцензія
 
